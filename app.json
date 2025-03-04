@@ -17,7 +17,8 @@
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
-        "NSCameraUsageDescription": "Este aplicativo usa a câmera para capturar imagens de paredes para aplicação virtual de tintas"
+        "NSCameraUsageDescription": "Este aplicativo usa a câmera para capturar imagens de paredes para aplicação virtual de tintas",
+        "NSPhotoLibraryUsageDescription": "Este aplicativo precisa acessar sua galeria para selecionar imagens de paredes"
       }
     },
     "android": {
@@ -26,7 +27,9 @@
         "backgroundColor": "#ffffff"
       },
       "permissions": [
-        "android.permission.CAMERA"
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
       ]
     },
     "web": {
@@ -37,6 +40,12 @@
         "expo-camera",
         {
           "cameraPermission": "Permitir que $(PRODUCT_NAME) acesse sua câmera para capturar imagens de paredes"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "O aplicativo precisa acessar suas fotos para selecionar imagens de paredes."
         }
       ]
     ]

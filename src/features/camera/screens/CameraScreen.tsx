@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, StatusBar} from 'react-native';
+import { View, StyleSheet, StatusBar, Text } from 'react-native';
 import { CameraComponent } from '../components/CameraComponent';
 import { CapturedImage } from '../components/CapturedImage';
 import { Header } from '../../../components/Header';
@@ -54,6 +54,9 @@ export const CameraScreen: React.FC<NavigationProps<Routes.CAMERA>> = ({
       });
     }
   };
+  const handleBack = () => {
+    navigation.goBack();
+  };
 
   return (
     <View style={styles.container}>
@@ -71,7 +74,8 @@ export const CameraScreen: React.FC<NavigationProps<Routes.CAMERA>> = ({
         <>
           <Header
             title="Capturar Parede"
-            backgroundColor="rgba(0, 0, 0, 0.5)"
+            leftIcon={<Text style={styles.backButton}>←</Text>}
+            onLeftPress={handleBack}
           />
           <CameraComponent onCapture={handleCapture} />
         </>
@@ -85,6 +89,11 @@ export const CameraScreen: React.FC<NavigationProps<Routes.CAMERA>> = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.black,
+    backgroundColor: colors.white,
+  },
+  backButton: {
+    fontSize: 24,
+    color: colors.black,
+    marginLeft: 10,
   },
 });

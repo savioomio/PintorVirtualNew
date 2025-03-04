@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Routes, RootStackParamList } from '../types/navigation';
 
 // Screens
+import { HomeScreen } from '../features/home/screens/HomeScreen';
 import { CameraScreen } from '../features/camera/screens/CameraScreen';
 import { ColorSelectionScreen } from '../features/colorCatalog/screens/ColorSelectionScreen';
 import { ImageEditScreen } from '../features/imageProcessing/screens/ImageEditScreen';
@@ -14,12 +15,16 @@ export const AppNavigator: React.FC = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName={Routes.CAMERA}
+        initialRouteName={Routes.HOME}
         screenOptions={{
           headerShown: false,
           animation: 'slide_from_right',
         }}
       >
+        <Stack.Screen
+          name={Routes.HOME}
+          component={HomeScreen}
+        />
         <Stack.Screen
           name={Routes.CAMERA}
           component={CameraScreen}

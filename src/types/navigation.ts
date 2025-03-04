@@ -3,12 +3,14 @@ import { RouteProp } from '@react-navigation/native';
 import { Color } from './index';
 
 export enum Routes {
+  HOME = 'Home',
   CAMERA = 'Camera',
   COLOR_SELECTION = 'ColorSelection',
   IMAGE_EDIT = 'ImageEdit'
 }
 
 export type RootStackParamList = {
+  [Routes.HOME]: undefined;
   [Routes.CAMERA]: undefined;
   [Routes.COLOR_SELECTION]: {
     imageUri: string;
