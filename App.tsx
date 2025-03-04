@@ -6,10 +6,8 @@ import { colors } from './src/theme/colors';
 import { typography } from './src/theme/typography';
 import { spacing } from './src/theme/spacing';
 import { opencvManager } from './src/services/opencv/opencvManager';
-// Garante que o React está importado
 
 export default function App() {
-  // Estado para controlar o carregamento inicial
   const [isLoading, setIsLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
 
@@ -67,6 +65,7 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  // Estilos existentes mantidos aqui
   loadingContainer: {
     flex: 1,
     justifyContent: 'center',
